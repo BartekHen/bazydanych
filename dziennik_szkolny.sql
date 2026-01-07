@@ -65,6 +65,27 @@ INSERT INTO `lekcja` (`id_lekcji`, `temat`, `data`, `id_przedmiot_w_klasie`) VAL
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `sprawdzian`
+--
+
+CREATE TABLE `sprawdzian` (
+  `id_sprawdzianu` int(11) NOT NULL,
+  `id_przedmiot_w_klasie` int(11) NOT NULL,
+  `temat` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `godzina` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sprawdzian`
+--
+
+INSERT INTO `sprawdzian` (`id_sprawdzianu`, `id_przedmiot_w_klasie`, `temat`, `data`, `godzina`) VALUES
+(1, 1, 'Sprawdzian z ułamków', '2026-01-10', '09:45:00');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `nauczyciel`
 --
 
@@ -256,16 +277,17 @@ CREATE TABLE `uzytkownik` (
 --
 
 INSERT INTO `uzytkownik` (`id_uzytkownika`, `login`, `haslo`, `imie`, `nazwisko`, `email`, `czy_aktywny`, `rola`, `telefon`) VALUES
-(1, 'admin', 'admin123', 'Jan', 'Administrator', 'admin@szkola.pl', 'TAK', 'admin', NULL),
-(4, 'jkowal', 'szkola123', 'Jan', 'Kowal', 'eee@gmail.com', 'TAK', 'nauczyciel', '44444444'),
-(5, 'jkowal88', 'uczen123', 'jan', 'kowal', 'jkowal88@szkola.pl', 'TAK', 'uczen', NULL),
-(7, 'jan.nowak60@szkola.pl', 'start123', 'Jan', 'Nowak', 'jan.nowak60@szkola.pl', 'TAK', 'rodzic', NULL),
-(10, 'jan.dab952@szkola.pl', 'start123', 'Jan', 'Dąb', 'jan.dab952@szkola.pl', 'TAK', 'rodzic', NULL),
-(13, 'karol.kos317@szkola.pl', 'start123', 'Karol', 'Kos', 'karol.kos317@szkola.pl', 'TAK', 'rodzic', NULL),
-(16, 'andrzej.kaczor215@szkola.pl', 'start123', 'Andrzej', 'Kaczor', 'andrzej.kaczor215@szkola.pl', 'TAK', 'rodzic', NULL),
-(18, 'annakowal941@szkola.pl', 'start123', 'Anna', 'Kowal', 'annakowal941@szkola.pl', 'TAK', 'uczen', NULL),
-(19, 'piotrzielinski148@szkola.pl', 'start123', 'Piotr', 'Zieliński', 'piotrzielinski148@szkola.pl', 'TAK', 'uczen', NULL),
-(20, 'abąk', 'szkola123', 'Agata', 'Bąk', 'abak@szkola.com', 'TAK', 'nauczyciel', NULL);
+(1, 'admin', '$2y$12$Gc/cwSk1pSZC7.YiA4a3gO1A92zHDdc/pKz2/QIPi0f7dyh75O6aa', 'Jan', 'Administrator', 'admin@szkola.pl', 'TAK', 'admin', NULL),
+(4, 'jkowal', '$2y$12$pA5b/HRlfJmlnPoi0/.WCutlvWEpnRHy9m55yCVTw7NkR30guMpoy', 'Jan', 'Kowal', 'eee@gmail.com', 'TAK', 'nauczyciel', '44444444'),
+(5, 'jkowal88', '$2y$12$IdcyhHqadBxgKljQMzXMXuGjP.KTWvZC86/ICFaK93101LE/luwxq', 'jan', 'kowal', 'jkowal88@szkola.pl', 'TAK', 'uczen', NULL),
+(7, 'jan.nowak60@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Jan', 'Nowak', 'jan.nowak60@szkola.pl', 'TAK', 'rodzic', NULL),
+(10, 'jan.dab952@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Jan', 'Dąb', 'jan.dab952@szkola.pl', 'TAK', 'rodzic', NULL),
+(13, 'karol.kos317@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Karol', 'Kos', 'karol.kos317@szkola.pl', 'TAK', 'rodzic', NULL),
+(16, 'andrzej.kaczor215@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Andrzej', 'Kaczor', 'andrzej.kaczor215@szkola.pl', 'TAK', 'rodzic', NULL),
+(18, 'annakowal941@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Anna', 'Kowal', 'annakowal941@szkola.pl', 'TAK', 'uczen', NULL),
+(19, 'piotrzielinski148@szkola.pl', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Piotr', 'Zieliński', 'piotrzielinski148@szkola.pl', 'TAK', 'uczen', NULL),
+(20, 'abąk', '$2y$12$pA5b/HRlfJmlnPoi0/.WCutlvWEpnRHy9m55yCVTw7NkR30guMpoy', 'Agata', 'Bąk', 'abak@szkola.com', 'TAK', 'nauczyciel', NULL),
+(21, 'sekretariat', '$2y$12$H5nGYm8YFXs5Lnl2DDwPBe2HILZ.l9QuoxMlFB1mnyDaRvoDLBWs2', 'Anna', 'Sekretariat', 'sekretariat@szkola.pl', 'TAK', 'sekretariat', '555111222');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -336,6 +358,13 @@ ALTER TABLE `rodzic`
   ADD KEY `id_uzytkownika` (`id_uzytkownika`);
 
 --
+-- Indeksy dla tabeli `sprawdzian`
+--
+ALTER TABLE `sprawdzian`
+  ADD PRIMARY KEY (`id_sprawdzianu`),
+  ADD KEY `id_przedmiot_w_klasie` (`id_przedmiot_w_klasie`);
+
+--
 -- Indeksy dla tabeli `uczen`
 --
 ALTER TABLE `uczen`
@@ -398,6 +427,12 @@ ALTER TABLE `rodzic`
   MODIFY `id_rodzica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `sprawdzian`
+--
+ALTER TABLE `sprawdzian`
+  MODIFY `id_sprawdzianu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `uczen`
 --
 ALTER TABLE `uczen`
@@ -407,7 +442,7 @@ ALTER TABLE `uczen`
 -- AUTO_INCREMENT for table `uzytkownik`
 --
 ALTER TABLE `uzytkownik`
-  MODIFY `id_uzytkownika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_uzytkownika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
@@ -459,6 +494,12 @@ ALTER TABLE `przedmiot_w_klasie`
 --
 ALTER TABLE `rodzic`
   ADD CONSTRAINT `rodzic_ibfk_1` FOREIGN KEY (`id_uzytkownika`) REFERENCES `uzytkownik` (`id_uzytkownika`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `sprawdzian`
+--
+ALTER TABLE `sprawdzian`
+  ADD CONSTRAINT `sprawdzian_ibfk_1` FOREIGN KEY (`id_przedmiot_w_klasie`) REFERENCES `przedmiot_w_klasie` (`id_przedmiot_w_klasie`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `uczen`
